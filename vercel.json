@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "name": "cycletrack",
+  "builds": [
+    {
+      "src": "cycling-app-vercel/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "cycling-app-vercel/build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/cycling-app-vercel/$1"
+    }
+  ]
+}
