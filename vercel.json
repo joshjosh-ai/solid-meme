@@ -1,19 +1,22 @@
 {
   "version": 2,
-  "name": "cycletrack",
+  "name": "goal-tracker",
   "builds": [
     {
-      "src": "cycling-app-vercel/package.json",
+      "src": "app/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "cycling-app-vercel/build"
+        "distDir": "build"
       }
     }
   ],
   "routes": [
     {
+      "handle": "filesystem"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/cycling-app-vercel/$1"
+      "dest": "/index.html"
     }
   ]
 }
